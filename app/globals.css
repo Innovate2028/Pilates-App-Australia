@@ -1,120 +1,176 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background: #fff4f7;
-  color: #2b1b24;
+  background: #fff7f5;
+  color: #2b1d24;
 }
 
 .hero {
-  min-height: 90vh;
+  min-height: 100vh;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 40px;
+  gap: 60px;
   align-items: center;
-  padding: 70px;
-  background: linear-gradient(135deg, #ffd9e8, #ffeede);
+  padding: 80px;
+  background: linear-gradient(135deg, #ffe3ec, #fff2ea);
 }
 
-.photoBox {
-  min-height: 420px;
-  border-radius: 30px;
-  background: white;
-  border: 2px dashed #c04d7c;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #c04d7c;
-  font-weight: bold;
+.heroLeft h1 {
+  font-size: 78px;
+  line-height: 1;
+  margin: 20px 0;
 }
 
 .eyebrow {
   color: #c04d7c;
-  font-weight: bold;
   text-transform: uppercase;
+  font-weight: bold;
   letter-spacing: 2px;
 }
 
-h1 {
-  font-size: 64px;
-  margin: 10px 0;
+.heroText {
+  font-size: 22px;
+  line-height: 1.7;
+  max-width: 600px;
 }
 
-p {
-  font-size: 20px;
-  line-height: 1.6;
-}
-
-.heroButtons,
-.localButtons {
+.heroButtons {
   display: flex;
-  gap: 15px;
+  gap: 16px;
+  margin-top: 35px;
   flex-wrap: wrap;
-  margin-top: 25px;
 }
 
-a,
+.heroButtons a,
+.studioButtons a,
 button {
-  padding: 15px 26px;
-  border-radius: 50px;
   background: #c04d7c;
   color: white;
   text-decoration: none;
+  padding: 16px 28px;
+  border-radius: 50px;
   font-weight: bold;
   border: none;
+  cursor: pointer;
 }
 
 .outline {
-  background: transparent;
-  color: #c04d7c;
+  background: transparent !important;
   border: 2px solid #c04d7c;
+  color: #c04d7c !important;
 }
 
-.photoSection,
-.local {
-  padding: 80px 40px;
+.appCard {
+  background: white;
+  padding: 35px;
+  border-radius: 30px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.08);
+}
+
+.appCard h3 {
+  margin-top: 0;
+  font-size: 30px;
+}
+
+input,
+select {
+  width: 100%;
+  padding: 18px;
+  margin-top: 15px;
+  border-radius: 18px;
+  border: 1px solid #eee;
+  font-size: 16px;
+}
+
+.appCard button {
+  width: 100%;
+  margin-top: 20px;
+  font-size: 17px;
+}
+
+.onboarding,
+.localStudios,
+.community {
+  padding: 100px 40px;
   text-align: center;
 }
 
-.photoGrid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 25px;
-  max-width: 1000px;
-  margin: 40px auto 0;
-}
-
-.photoGrid div {
-  height: 260px;
-  background: white;
-  border: 2px dashed #c04d7c;
-  border-radius: 24px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.sectionTag {
   color: #c04d7c;
+  text-transform: uppercase;
   font-weight: bold;
+  letter-spacing: 2px;
 }
 
-.local {
-  background: #2b1b24;
+h2 {
+  font-size: 54px;
+  margin-top: 10px;
+}
+
+.goalsGrid,
+.storiesGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 25px;
+  max-width: 1300px;
+  margin: 50px auto 0;
+}
+
+.goalCard,
+.storyCard {
+  background: white;
+  padding: 30px;
+  border-radius: 28px;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.06);
+  text-align: left;
+}
+
+.goalCard h3,
+.storyCard h3 {
+  margin-top: 0;
+}
+
+.localStudios {
+  background: #2b1d24;
   color: white;
 }
 
-.local h2 {
+.localStudios h2 {
   color: white;
 }
 
-@media (max-width: 900px) {
+.studioButtons {
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+  flex-wrap: wrap;
+  margin-top: 40px;
+}
+
+.community {
+  background: #fff7f5;
+}
+
+@media (max-width: 1000px) {
   .hero {
     grid-template-columns: 1fr;
-    padding: 40px 20px;
+    padding: 50px 25px;
   }
 
-  h1 {
-    font-size: 42px;
+  .heroLeft h1 {
+    font-size: 52px;
   }
 
-  .photoGrid {
+  .goalsGrid,
+  .storiesGrid {
     grid-template-columns: 1fr;
+  }
+
+  h2 {
+    font-size: 40px;
   }
 }
