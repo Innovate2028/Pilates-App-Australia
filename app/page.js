@@ -1,161 +1,114 @@
 export default function Home() {
   return (
     <main>
-
       <section className="hero">
-
         <div className="heroLeft">
-          <p className="eyebrow">Women’s Wellness • Pilates • Sydney</p>
+          <p className="eyebrow">Pilates On Demand • Sydney</p>
 
           <h1>
-            Feel Stronger.
+            Book Pilates
             <br />
-            Move Better.
-            <br />
-            Connect Together.
+            Near You.
           </h1>
 
           <p className="heroText">
-            Pilates Her Australia helps women across Sydney discover Pilates studios,
-            stay motivated, share experiences and build confidence together.
+            Pilates Her connects women with trusted Pilates instructors,
+            reformer studios and wellness classes nearby — starting in Ryde, Sydney.
           </p>
 
           <div className="heroButtons">
-            <a
-              href="https://www.google.com/maps/search/pilates+Ryde+Sydney"
-              target="_blank"
-            >
-              Find Pilates Near Ryde
-            </a>
-
-            <a
-              href="https://www.google.com/search?q=women+pilates+sydney"
-              target="_blank"
-              className="outline"
-            >
-              Explore Community
-            </a>
+            <a href="#find">Find Pilates Now</a>
+            <a href="#instructors" className="outline">Become an Instructor</a>
           </div>
         </div>
 
         <div className="heroRight">
-          <div className="mainPhoto">
-            ADD MAIN PHOTO
-          </div>
-
-          <div className="smallPhotos">
-            <div>PHOTO</div>
-            <div>PHOTO</div>
+          <div className="appCard">
+            <h3>Find a Pilates Session</h3>
+            <input placeholder="Enter suburb e.g. Ryde" />
+            <select>
+              <option>Reformer Pilates</option>
+              <option>Mat Pilates</option>
+              <option>Beginner Pilates</option>
+              <option>Women-only Class</option>
+              <option>Private Instructor</option>
+            </select>
+            <button>Search Nearby</button>
           </div>
         </div>
-
       </section>
 
-      <section className="onboarding">
-
-        <p className="sectionTag">Personalised Wellness</p>
-
-        <h2>What are your goals?</h2>
+      <section id="find" className="onboarding">
+        <p className="sectionTag">How It Works</p>
+        <h2>Pilates booking made simple</h2>
 
         <div className="goalsGrid">
-
           <div className="goalCard">
-            <h3>Build Confidence</h3>
-            <p>Feel stronger mentally and physically.</p>
+            <h3>1. Search Nearby</h3>
+            <p>Find Pilates classes and instructors close to your suburb.</p>
           </div>
 
           <div className="goalCard">
-            <h3>Improve Flexibility</h3>
-            <p>Move better and feel healthier daily.</p>
+            <h3>2. Compare Options</h3>
+            <p>View class type, distance, reviews and availability.</p>
           </div>
 
           <div className="goalCard">
-            <h3>Reduce Stress</h3>
-            <p>Find calm through movement and wellness.</p>
+            <h3>3. Book Instantly</h3>
+            <p>Reserve your spot or request a private instructor.</p>
           </div>
 
           <div className="goalCard">
-            <h3>Join Community</h3>
-            <p>Connect with women across Australia.</p>
+            <h3>4. Stay Motivated</h3>
+            <p>Track your journey and connect with other women.</p>
           </div>
-
         </div>
-
       </section>
 
       <section className="localStudios">
-
-        <p className="sectionTag">Sydney Pilates</p>
-
-        <h2>Popular Searches</h2>
+        <p className="sectionTag">Popular Searches</p>
+        <h2>Find Pilates Around Sydney</h2>
 
         <div className="studioButtons">
-
-          <a
-            href="https://www.google.com/maps/search/reformer+pilates+Ryde+Sydney"
-            target="_blank"
-          >
-            Reformer Pilates
+          <a href="https://www.google.com/maps/search/reformer+pilates+Ryde+Sydney" target="_blank">
+            Reformer Pilates Ryde
           </a>
 
-          <a
-            href="https://www.google.com/maps/search/beginner+pilates+Ryde+Sydney"
-            target="_blank"
-          >
-            Beginner Pilates
+          <a href="https://www.google.com/maps/search/pilates+Meadowbank+Sydney" target="_blank">
+            Pilates Meadowbank
           </a>
 
-          <a
-            href="https://www.google.com/maps/search/womens+pilates+Sydney"
-            target="_blank"
-          >
-            Women’s Pilates
+          <a href="https://www.google.com/maps/search/pilates+Parramatta+Sydney" target="_blank">
+            Pilates Parramatta
           </a>
 
-          <a
-            href="https://www.google.com/maps/search/wellness+studios+Sydney"
-            target="_blank"
-          >
-            Wellness Studios
+          <a href="https://www.google.com/maps/search/womens+pilates+Sydney" target="_blank">
+            Women’s Pilates Sydney
           </a>
-
         </div>
-
       </section>
 
-      <section className="community">
-
-        <p className="sectionTag">Community Stories</p>
-
-        <h2>Women Supporting Women</h2>
+      <section id="instructors" className="community">
+        <p className="sectionTag">For Studios & Instructors</p>
+        <h2>List your Pilates services</h2>
 
         <div className="storiesGrid">
-
           <div className="storyCard">
-            <h3>Sarah • Ryde</h3>
-            <p>
-              “Pilates helped me rebuild confidence after a difficult year.”
-            </p>
+            <h3>Studios</h3>
+            <p>Promote your classes and attract local women looking for Pilates.</p>
           </div>
 
           <div className="storyCard">
-            <h3>Emma • Sydney</h3>
-            <p>
-              “I finally found a wellness routine that actually feels sustainable.”
-            </p>
+            <h3>Instructors</h3>
+            <p>Offer private sessions, group sessions or mobile Pilates bookings.</p>
           </div>
 
           <div className="storyCard">
-            <h3>Olivia • Parramatta</h3>
-            <p>
-              “The motivation from other women keeps me consistent every week.”
-            </p>
+            <h3>Community</h3>
+            <p>Build trust through reviews, stories and wellness connection.</p>
           </div>
-
         </div>
-
       </section>
-
     </main>
   );
 }
