@@ -5,8 +5,8 @@
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background: #fff8f6;
-  color: #24171d;
+  background: #0f0b13;
+  color: #fff8f1;
 }
 
 .premiumHero {
@@ -17,35 +17,36 @@ body {
   align-items: center;
   padding: 90px 8%;
   background:
-    radial-gradient(circle at top right, #ffd6e6, transparent 35%),
-    linear-gradient(135deg, #fff7f3, #ffe4ed);
+    radial-gradient(circle at top right, rgba(214, 168, 92, 0.35), transparent 35%),
+    linear-gradient(135deg, #120b18, #2a1022 55%, #4a1f35);
 }
 
-.eyebrow {
-  color: #b83f72;
+.eyebrow,
+.miniTag {
+  color: #d6a85c;
   text-transform: uppercase;
-  font-weight: 800;
+  font-weight: 900;
   letter-spacing: 2px;
   font-size: 14px;
 }
 
 h1 {
-  font-size: clamp(52px, 7vw, 92px);
+  font-size: clamp(52px, 7vw, 96px);
   line-height: 0.95;
   margin: 18px 0;
-  max-width: 800px;
+  max-width: 850px;
 }
 
 h2 {
-  font-size: clamp(38px, 5vw, 62px);
+  font-size: clamp(36px, 5vw, 66px);
   margin: 10px 0 20px;
 }
 
 .heroText {
   font-size: 22px;
   line-height: 1.7;
-  max-width: 650px;
-  color: #5b4a51;
+  max-width: 680px;
+  color: #f3d9e5;
 }
 
 .heroButtons,
@@ -59,35 +60,36 @@ h2 {
 .heroButtons a,
 .cardButtons a,
 .partnerSection a,
+.quoteSection a,
 button {
-  background: #b83f72;
-  color: white;
+  background: #d6a85c;
+  color: #160c14;
   text-decoration: none;
   padding: 15px 26px;
   border-radius: 999px;
-  font-weight: 800;
+  font-weight: 900;
   border: none;
   cursor: pointer;
 }
 
 .outline,
 .outlineSmall {
-  background: white !important;
-  color: #b83f72 !important;
-  border: 2px solid #b83f72;
+  background: transparent !important;
+  color: #d6a85c !important;
+  border: 2px solid #d6a85c;
 }
 
 .searchPanel {
-  background: rgba(255,255,255,0.86);
-  backdrop-filter: blur(12px);
-  padding: 38px;
+  background: rgba(255, 248, 241, 0.92);
+  color: #21131c;
+  padding: 40px;
   border-radius: 34px;
-  box-shadow: 0 30px 80px rgba(184, 63, 114, 0.16);
-  border: 1px solid rgba(255,255,255,0.8);
+  box-shadow: 0 30px 90px rgba(0,0,0,0.35);
+  border: 1px solid rgba(214, 168, 92, 0.45);
 }
 
 .searchPanel h3 {
-  font-size: 32px;
+  font-size: 34px;
   margin-top: 0;
 }
 
@@ -97,9 +99,8 @@ select {
   padding: 18px;
   margin-top: 14px;
   border-radius: 18px;
-  border: 1px solid #ead7df;
+  border: 1px solid #ead8bf;
   font-size: 16px;
-  background: white;
 }
 
 .searchPanel button {
@@ -108,84 +109,114 @@ select {
   font-size: 17px;
 }
 
-.studioSection {
-  padding: 90px 8%;
+.movement,
+.studioSection,
+.shopSection,
+.quoteSection,
+.partnerSection {
+  padding: 95px 8%;
   text-align: center;
 }
 
+.movement {
+  background: #fff8f1;
+  color: #21131c;
+}
+
+.movementGrid,
+.productGrid,
 .studioGrid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
   gap: 24px;
   margin-top: 50px;
 }
 
-.studioCard {
-  background: white;
-  border-radius: 30px;
-  overflow: hidden;
-  text-align: left;
-  box-shadow: 0 22px 55px rgba(0,0,0,0.07);
-  border: 1px solid #f1e1e7;
+.movementGrid {
+  grid-template-columns: repeat(3, 1fr);
 }
 
-.studioImage {
+.studioGrid,
+.productGrid {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.movementGrid div,
+.studioCard,
+.productCard {
+  background: white;
+  color: #21131c;
+  border-radius: 30px;
+  padding: 30px;
+  text-align: left;
+  box-shadow: 0 22px 60px rgba(0,0,0,0.12);
+  border: 1px solid rgba(214, 168, 92, 0.25);
+}
+
+.studioCard,
+.productCard {
+  padding: 0;
+  overflow: hidden;
+}
+
+.studioImage,
+.productImage {
   height: 210px;
-  background: linear-gradient(135deg, #ffe1ec, #fff3ea);
+  background: linear-gradient(135deg, #2a1022, #d6a85c);
+  color: #fff8f1;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #b83f72;
   font-weight: 900;
 }
 
-.studioInfo {
+.studioInfo,
+.productCard {
   padding: 24px;
 }
 
-.badge {
+.badge,
+.price {
   display: inline-block;
-  background: #fff0f5;
-  color: #b83f72;
+  background: #f8ead0;
+  color: #7a4b13;
   padding: 8px 12px;
   border-radius: 999px;
   font-size: 13px;
-  font-weight: 800;
+  font-weight: 900;
 }
 
-.studioInfo h3 {
-  font-size: 24px;
-  margin-bottom: 8px;
-}
-
+.productCard p,
 .studioInfo p {
-  color: #5b4a51;
+  color: #5a4b51;
   line-height: 1.5;
 }
 
-.cardButtons a {
-  font-size: 14px;
-  padding: 12px 18px;
+.shopSection {
+  background: #180f17;
 }
 
-.partnerSection {
-  padding: 100px 8%;
-  text-align: center;
-  background: #24171d;
-  color: white;
+.quoteSection {
+  background: linear-gradient(135deg, #4a1f35, #120b18);
 }
 
+.quoteSection p,
 .partnerSection p {
-  max-width: 680px;
+  max-width: 720px;
   margin: 0 auto 35px;
   font-size: 20px;
   line-height: 1.7;
-  color: #f7dbe7;
+  color: #f3d9e5;
+}
+
+.partnerSection {
+  background: #0f0b13;
 }
 
 @media (max-width: 1100px) {
   .premiumHero,
-  .studioGrid {
+  .movementGrid,
+  .studioGrid,
+  .productGrid {
     grid-template-columns: 1fr;
   }
 
@@ -193,7 +224,10 @@ select {
     padding: 60px 24px;
   }
 
+  .movement,
   .studioSection,
+  .shopSection,
+  .quoteSection,
   .partnerSection {
     padding: 70px 24px;
   }
