@@ -1,95 +1,100 @@
-"use client";
-
-import { useState } from "react";
+const studios = [
+  {
+    name: "The Blissed Out Movement",
+    area: "Ryde / Gladesville",
+    type: "Reformer, Mat, Yoga & Barre",
+    website: "https://www.theblissedoutmovement.com.au/"
+  },
+  {
+    name: "Hi Pilates Ermington",
+    area: "Ermington / West Ryde",
+    type: "Reformer Pilates",
+    website: "https://hipilates.com.au/pages/location-ermington"
+  },
+  {
+    name: "Play Pilates Studio",
+    area: "Macquarie Park / Ryde",
+    type: "Reformer & Mat Pilates",
+    website: "https://playpilatesstudio.com.au/"
+  },
+  {
+    name: "Discover Pilates",
+    area: "North Ryde",
+    type: "Equipment-based Pilates",
+    website: "https://rydenaturalhealthclinic.com.au/pilates-north-ryde/"
+  }
+];
 
 export default function Home() {
-  const [location, setLocation] = useState(null);
-  const [status, setStatus] = useState("");
-
-  function getUserLocation() {
-    if (!navigator.geolocation) {
-      setStatus("GPS is not supported on this device.");
-      return;
-    }
-
-    setStatus("Requesting your location...");
-
-    navigator.geolocation.getCurrentPosition(
-      (position) => {
-        const lat = position.coords.latitude;
-        const lng = position.coords.longitude;
-
-        setLocation({ lat, lng });
-        setStatus("Location found.");
-      },
-      () => {
-        setStatus("Location permission was denied.");
-      }
-    );
-  }
-
   return (
     <main>
-      <section className="hero">
-        <div className="heroLeft">
-          <p className="eyebrow">Pilates On Demand • Sydney</p>
-
-          <h1>
-            Book Pilates
-            <br />
-            Near You.
-          </h1>
-
+      <section className="premiumHero">
+        <div>
+          <p className="eyebrow">Pilates Marketplace • Sydney</p>
+          <h1>Find & book Pilates near you.</h1>
           <p className="heroText">
-            Pilates Her connects women with trusted Pilates instructors,
-            reformer studios and wellness classes nearby.
+            A premium discovery app connecting women with trusted Pilates studios,
+            instructors and wellness spaces around Ryde and Sydney.
           </p>
 
           <div className="heroButtons">
-            <button onClick={getUserLocation}>Use My Live Location</button>
-
-            <a
-              href="https://www.google.com/maps/search/pilates+near+me"
-              target="_blank"
-            >
-              Find Pilates Near Me
-            </a>
+            <a href="#studios">Explore Studios</a>
+            <a className="outline" href="#partners">List Your Studio</a>
           </div>
         </div>
 
-        <div className="heroRight">
-          <div className="appCard">
-            <h3>Live GPS Pilates Finder</h3>
-
-            <p>{status}</p>
-
-            {location && (
-              <>
-                <p>
-                  <strong>Your location:</strong>
-                  <br />
-                  Latitude: {location.lat}
-                  <br />
-                  Longitude: {location.lng}
-                </p>
-
-                <a
-                  className="gpsButton"
-                  href={`https://www.google.com/maps/search/pilates/@${location.lat},${location.lng},14z`}
-                  target="_blank"
-                >
-                  Search Pilates Near This Location
-                </a>
-              </>
-            )}
-
-            {!location && (
-              <p>
-                Tap the button to allow location access and find Pilates near you.
-              </p>
-            )}
-          </div>
+        <div className="searchPanel">
+          <h3>Start your search</h3>
+          <input placeholder="Suburb e.g. Ryde" />
+          <select>
+            <option>Reformer Pilates</option>
+            <option>Beginner Pilates</option>
+            <option>Women-only Pilates</option>
+            <option>Private Instructor</option>
+          </select>
+          <button>Search Pilates</button>
         </div>
+      </section>
+
+      <section id="studios" className="studioSection">
+        <p className="eyebrow">Featured Studios</p>
+        <h2>Book trusted local Pilates</h2>
+
+        <div className="studioGrid">
+          {studios.map((studio) => (
+            <article className="studioCard" key={studio.name}>
+              <div className="studioImage">Studio Photo</div>
+              <div className="studioInfo">
+                <p className="badge">{studio.area}</p>
+                <h3>{studio.name}</h3>
+                <p>{studio.type}</p>
+
+                <div className="cardButtons">
+                  <a href={studio.website} target="_blank">
+                    Visit Website
+                  </a>
+                  <a
+                    className="outlineSmall"
+                    href={`https://www.google.com/maps/search/${studio.name}`}
+                    target="_blank"
+                  >
+                    View Map
+                  </a>
+                </div>
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section id="partners" className="partnerSection">
+        <p className="eyebrow">For Studios & Instructors</p>
+        <h2>Grow your Pilates bookings</h2>
+        <p>
+          List your studio, receive local leads and connect with women actively
+          looking for Pilates in their area.
+        </p>
+        <a href="mailto:hello@pilatesher.com.au">Apply to be listed</a>
       </section>
     </main>
   );
