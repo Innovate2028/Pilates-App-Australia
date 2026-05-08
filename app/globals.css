@@ -5,101 +5,196 @@
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background: #fff7f5;
-  color: #2b1d24;
+  background: #fff8f6;
+  color: #24171d;
 }
 
-.hero {
+.premiumHero {
   min-height: 100vh;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1.1fr 0.9fr;
   gap: 60px;
   align-items: center;
-  padding: 80px;
-  background: linear-gradient(135deg, #ffe3ec, #fff2ea);
-}
-
-.heroLeft h1 {
-  font-size: 76px;
-  line-height: 1;
-  margin: 20px 0;
+  padding: 90px 8%;
+  background:
+    radial-gradient(circle at top right, #ffd6e6, transparent 35%),
+    linear-gradient(135deg, #fff7f3, #ffe4ed);
 }
 
 .eyebrow {
-  color: #c04d7c;
+  color: #b83f72;
   text-transform: uppercase;
-  font-weight: bold;
+  font-weight: 800;
   letter-spacing: 2px;
+  font-size: 14px;
+}
+
+h1 {
+  font-size: clamp(52px, 7vw, 92px);
+  line-height: 0.95;
+  margin: 18px 0;
+  max-width: 800px;
+}
+
+h2 {
+  font-size: clamp(38px, 5vw, 62px);
+  margin: 10px 0 20px;
 }
 
 .heroText {
   font-size: 22px;
   line-height: 1.7;
-  max-width: 620px;
+  max-width: 650px;
+  color: #5b4a51;
 }
 
-.heroButtons {
+.heroButtons,
+.cardButtons {
   display: flex;
-  gap: 16px;
+  gap: 14px;
   flex-wrap: wrap;
-  margin-top: 35px;
+  margin-top: 30px;
 }
 
-.heroButtons button,
 .heroButtons a,
-.gpsButton {
-  background: #c04d7c;
+.cardButtons a,
+.partnerSection a,
+button {
+  background: #b83f72;
   color: white;
   text-decoration: none;
-  padding: 16px 28px;
-  border-radius: 50px;
-  font-weight: bold;
+  padding: 15px 26px;
+  border-radius: 999px;
+  font-weight: 800;
   border: none;
   cursor: pointer;
-  display: inline-block;
 }
 
-.gpsButton {
-  margin-top: 20px;
+.outline,
+.outlineSmall {
+  background: white !important;
+  color: #b83f72 !important;
+  border: 2px solid #b83f72;
 }
 
-.appCard {
-  background: white;
-  padding: 40px;
-  border-radius: 30px;
-  box-shadow: 0 20px 60px rgba(0,0,0,0.08);
+.searchPanel {
+  background: rgba(255,255,255,0.86);
+  backdrop-filter: blur(12px);
+  padding: 38px;
+  border-radius: 34px;
+  box-shadow: 0 30px 80px rgba(184, 63, 114, 0.16);
+  border: 1px solid rgba(255,255,255,0.8);
 }
 
-.appCard h3 {
+.searchPanel h3 {
+  font-size: 32px;
   margin-top: 0;
-  font-size: 34px;
 }
 
-.appCard p {
-  font-size: 18px;
-  line-height: 1.7;
+input,
+select {
+  width: 100%;
+  padding: 18px;
+  margin-top: 14px;
+  border-radius: 18px;
+  border: 1px solid #ead7df;
+  font-size: 16px;
+  background: white;
 }
 
-.heroRight {
+.searchPanel button {
+  width: 100%;
+  margin-top: 18px;
+  font-size: 17px;
+}
+
+.studioSection {
+  padding: 90px 8%;
+  text-align: center;
+}
+
+.studioGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  margin-top: 50px;
+}
+
+.studioCard {
+  background: white;
+  border-radius: 30px;
+  overflow: hidden;
+  text-align: left;
+  box-shadow: 0 22px 55px rgba(0,0,0,0.07);
+  border: 1px solid #f1e1e7;
+}
+
+.studioImage {
+  height: 210px;
+  background: linear-gradient(135deg, #ffe1ec, #fff3ea);
   display: flex;
+  align-items: center;
   justify-content: center;
+  color: #b83f72;
+  font-weight: 900;
 }
 
-@media (max-width: 1000px) {
-  .hero {
+.studioInfo {
+  padding: 24px;
+}
+
+.badge {
+  display: inline-block;
+  background: #fff0f5;
+  color: #b83f72;
+  padding: 8px 12px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.studioInfo h3 {
+  font-size: 24px;
+  margin-bottom: 8px;
+}
+
+.studioInfo p {
+  color: #5b4a51;
+  line-height: 1.5;
+}
+
+.cardButtons a {
+  font-size: 14px;
+  padding: 12px 18px;
+}
+
+.partnerSection {
+  padding: 100px 8%;
+  text-align: center;
+  background: #24171d;
+  color: white;
+}
+
+.partnerSection p {
+  max-width: 680px;
+  margin: 0 auto 35px;
+  font-size: 20px;
+  line-height: 1.7;
+  color: #f7dbe7;
+}
+
+@media (max-width: 1100px) {
+  .premiumHero,
+  .studioGrid {
     grid-template-columns: 1fr;
-    padding: 50px 25px;
   }
 
-  .heroLeft h1 {
-    font-size: 52px;
+  .premiumHero {
+    padding: 60px 24px;
   }
 
-  .heroText {
-    font-size: 19px;
-  }
-
-  .appCard {
-    width: 100%;
+  .studioSection,
+  .partnerSection {
+    padding: 70px 24px;
   }
 }
