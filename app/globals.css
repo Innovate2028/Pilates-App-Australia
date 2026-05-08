@@ -20,7 +20,7 @@ body {
 }
 
 .heroLeft h1 {
-  font-size: 78px;
+  font-size: 76px;
   line-height: 1;
   margin: 20px 0;
 }
@@ -35,19 +35,19 @@ body {
 .heroText {
   font-size: 22px;
   line-height: 1.7;
-  max-width: 600px;
+  max-width: 620px;
 }
 
 .heroButtons {
   display: flex;
   gap: 16px;
-  margin-top: 35px;
   flex-wrap: wrap;
+  margin-top: 35px;
 }
 
+.heroButtons button,
 .heroButtons a,
-.studioButtons a,
-button {
+.gpsButton {
   background: #c04d7c;
   color: white;
   text-decoration: none;
@@ -56,103 +56,33 @@ button {
   font-weight: bold;
   border: none;
   cursor: pointer;
+  display: inline-block;
 }
 
-.outline {
-  background: transparent !important;
-  border: 2px solid #c04d7c;
-  color: #c04d7c !important;
+.gpsButton {
+  margin-top: 20px;
 }
 
 .appCard {
   background: white;
-  padding: 35px;
+  padding: 40px;
   border-radius: 30px;
   box-shadow: 0 20px 60px rgba(0,0,0,0.08);
 }
 
 .appCard h3 {
   margin-top: 0;
-  font-size: 30px;
+  font-size: 34px;
 }
 
-input,
-select {
-  width: 100%;
-  padding: 18px;
-  margin-top: 15px;
-  border-radius: 18px;
-  border: 1px solid #eee;
-  font-size: 16px;
+.appCard p {
+  font-size: 18px;
+  line-height: 1.7;
 }
 
-.appCard button {
-  width: 100%;
-  margin-top: 20px;
-  font-size: 17px;
-}
-
-.onboarding,
-.localStudios,
-.community {
-  padding: 100px 40px;
-  text-align: center;
-}
-
-.sectionTag {
-  color: #c04d7c;
-  text-transform: uppercase;
-  font-weight: bold;
-  letter-spacing: 2px;
-}
-
-h2 {
-  font-size: 54px;
-  margin-top: 10px;
-}
-
-.goalsGrid,
-.storiesGrid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 25px;
-  max-width: 1300px;
-  margin: 50px auto 0;
-}
-
-.goalCard,
-.storyCard {
-  background: white;
-  padding: 30px;
-  border-radius: 28px;
-  box-shadow: 0 15px 40px rgba(0,0,0,0.06);
-  text-align: left;
-}
-
-.goalCard h3,
-.storyCard h3 {
-  margin-top: 0;
-}
-
-.localStudios {
-  background: #2b1d24;
-  color: white;
-}
-
-.localStudios h2 {
-  color: white;
-}
-
-.studioButtons {
+.heroRight {
   display: flex;
   justify-content: center;
-  gap: 18px;
-  flex-wrap: wrap;
-  margin-top: 40px;
-}
-
-.community {
-  background: #fff7f5;
 }
 
 @media (max-width: 1000px) {
@@ -165,12 +95,11 @@ h2 {
     font-size: 52px;
   }
 
-  .goalsGrid,
-  .storiesGrid {
-    grid-template-columns: 1fr;
+  .heroText {
+    font-size: 19px;
   }
 
-  h2 {
-    font-size: 40px;
+  .appCard {
+    width: 100%;
   }
 }
