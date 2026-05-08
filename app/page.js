@@ -1,4 +1,33 @@
+"use client";
+
+import { useState } from "react";
+
 export default function Home() {
+  const [location, setLocation] = useState(null);
+  const [status, setStatus] = useState("");
+
+  function getUserLocation() {
+    if (!navigator.geolocation) {
+      setStatus("GPS is not supported on this device.");
+      return;
+    }
+
+    setStatus("Requesting your location...");
+
+    navigator.geolocation.getCurrentPosition(
+      (position) => {
+        const lat = position.coords.latitude;
+        const lng = position.coords.longitude;
+
+        setLocation({ lat, lng });
+        setStatus("Location found.");
+      },
+      () => {
+        setStatus("Location permission was denied.");
+      }
+    );
+  }
+
   return (
     <main>
       <section className="hero">
@@ -13,99 +42,52 @@ export default function Home() {
 
           <p className="heroText">
             Pilates Her connects women with trusted Pilates instructors,
-            reformer studios and wellness classes nearby — starting in Ryde, Sydney.
+            reformer studios and wellness classes nearby.
           </p>
 
           <div className="heroButtons">
-            <a href="#find">Find Pilates Now</a>
-            <a href="#instructors" className="outline">Become an Instructor</a>
+            <button onClick={getUserLocation}>Use My Live Location</button>
+
+            <a
+              href="https://www.google.com/maps/search/pilates+near+me"
+              target="_blank"
+            >
+              Find Pilates Near Me
+            </a>
           </div>
         </div>
 
         <div className="heroRight">
           <div className="appCard">
-            <h3>Find a Pilates Session</h3>
-            <input placeholder="Enter suburb e.g. Ryde" />
-            <select>
-              <option>Reformer Pilates</option>
-              <option>Mat Pilates</option>
-              <option>Beginner Pilates</option>
-              <option>Women-only Class</option>
-              <option>Private Instructor</option>
-            </select>
-            <button>Search Nearby</button>
-          </div>
-        </div>
-      </section>
+            <h3>Live GPS Pilates Finder</h3>
 
-      <section id="find" className="onboarding">
-        <p className="sectionTag">How It Works</p>
-        <h2>Pilates booking made simple</h2>
+            <p>{status}</p>
 
-        <div className="goalsGrid">
-          <div className="goalCard">
-            <h3>1. Search Nearby</h3>
-            <p>Find Pilates classes and instructors close to your suburb.</p>
-          </div>
+            {location && (
+              <>
+                <p>
+                  <strong>Your location:</strong>
+                  <br />
+                  Latitude: {location.lat}
+                  <br />
+                  Longitude: {location.lng}
+                </p>
 
-          <div className="goalCard">
-            <h3>2. Compare Options</h3>
-            <p>View class type, distance, reviews and availability.</p>
-          </div>
+                <a
+                  className="gpsButton"
+                  href={`https://www.google.com/maps/search/pilates/@${location.lat},${location.lng},14z`}
+                  target="_blank"
+                >
+                  Search Pilates Near This Location
+                </a>
+              </>
+            )}
 
-          <div className="goalCard">
-            <h3>3. Book Instantly</h3>
-            <p>Reserve your spot or request a private instructor.</p>
-          </div>
-
-          <div className="goalCard">
-            <h3>4. Stay Motivated</h3>
-            <p>Track your journey and connect with other women.</p>
-          </div>
-        </div>
-      </section>
-
-      <section className="localStudios">
-        <p className="sectionTag">Popular Searches</p>
-        <h2>Find Pilates Around Sydney</h2>
-
-        <div className="studioButtons">
-          <a href="https://www.google.com/maps/search/reformer+pilates+Ryde+Sydney" target="_blank">
-            Reformer Pilates Ryde
-          </a>
-
-          <a href="https://www.google.com/maps/search/pilates+Meadowbank+Sydney" target="_blank">
-            Pilates Meadowbank
-          </a>
-
-          <a href="https://www.google.com/maps/search/pilates+Parramatta+Sydney" target="_blank">
-            Pilates Parramatta
-          </a>
-
-          <a href="https://www.google.com/maps/search/womens+pilates+Sydney" target="_blank">
-            Women’s Pilates Sydney
-          </a>
-        </div>
-      </section>
-
-      <section id="instructors" className="community">
-        <p className="sectionTag">For Studios & Instructors</p>
-        <h2>List your Pilates services</h2>
-
-        <div className="storiesGrid">
-          <div className="storyCard">
-            <h3>Studios</h3>
-            <p>Promote your classes and attract local women looking for Pilates.</p>
-          </div>
-
-          <div className="storyCard">
-            <h3>Instructors</h3>
-            <p>Offer private sessions, group sessions or mobile Pilates bookings.</p>
-          </div>
-
-          <div className="storyCard">
-            <h3>Community</h3>
-            <p>Build trust through reviews, stories and wellness connection.</p>
+            {!location && (
+              <p>
+                Tap the button to allow location access and find Pilates near you.
+              </p>
+            )}
           </div>
         </div>
       </section>
